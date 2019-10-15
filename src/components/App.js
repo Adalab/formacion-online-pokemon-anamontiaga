@@ -6,7 +6,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemones: []
+      pokemones: [],
+      image: []
     };
   }
 
@@ -21,17 +22,25 @@ class App extends React.Component {
   }
 
   render() {
-    const { pokemones } = this.state;
+    const { pokemones, image } = this.state;
 
     return (
       <div className="app">
         <ul className="pokemones">
           {pokemones.map((pokemon, index) => {
+            fetch(pokemon.url)
+              .then(response => response.json())
+              .then(url => {
+                this.setState({ image: url.sprites.front_default });
+              });
+
             return (
               <li className="pokemon" id={index} key={index}>
                 <div className="card">
                   <h2>{pokemon.name}</h2>
-                  <div className="card__img"></div>
+                  <div className="card__img--container">
+                    <img src={`${image}`} className="card__img" alt={pokemon.name}></img>
+                  </div>
                 </div>
               </li>
             );
