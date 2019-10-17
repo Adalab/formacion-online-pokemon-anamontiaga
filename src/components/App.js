@@ -51,6 +51,15 @@ class App extends React.Component {
                     <img src={pokemon.image} className="card__img" alt={pokemon.name}></img>
                   </div>
                   <h2>{pokemon.name}</h2>
+                  <ul className="card__types">
+                    {pokemon.types.map((type, typeIndex) => {
+                      return (
+                        <li className="card__type" key={typeIndex}>
+                          {type}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </li>
             );
