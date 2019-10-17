@@ -1,12 +1,15 @@
 import React from "react";
 import "../stylesheets/App.scss";
+import PokeList from "./PokeList.js";
 import { fetchPokemones } from "../services/fetchPokemones";
+import PropTypes from "prop-types";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemones: []
+      pokemones: [],
+      query: ""
     };
   }
 
@@ -37,37 +40,19 @@ class App extends React.Component {
   }
 
   render() {
-    const { pokemones } = this.state;
+    const { pokemones, query } = this.state;
 
     return (
       <div className="app">
-        <ul className="pokemones">
-          {pokemones.map((pokemon, index) => {
-            return (
-              <li className="pokemon" id={index + 1} key={index + 1}>
-                <div className="card">
-                  <div className="card__img--container">
-                    <p className="id">ID /{index + 1} </p>
-                    <img src={pokemon.image} className="card__img" alt={pokemon.name}></img>
-                  </div>
-                  <h2>{pokemon.name}</h2>
-                  <ul className="card__types">
-                    {pokemon.types.map((type, typeIndex) => {
-                      return (
-                        <li className="card__type" key={typeIndex}>
-                          {type}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <PokeList pokemones={pokemones} query={query} />
       </div>
     );
   }
 }
+
+App.propTypes = {
+  pokemones: PropTypes.arrayOf(PropTypes.object),
+  query: PropTypes.string.isRequired
+};
 
 export default App;
