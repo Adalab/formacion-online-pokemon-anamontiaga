@@ -1,7 +1,8 @@
 import React from "react";
 import "../stylesheets/App.scss";
-import PokeList from "./PokeList.js";
 import { fetchPokemones } from "../services/fetchPokemones";
+import PokeList from "./PokeList.js";
+import Filter from "./Filter.js";
 import PropTypes from "prop-types";
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
       pokemones: [],
       query: ""
     };
+    this.getQuery = this.getQuery.bind(this);
   }
 
   componentDidMount() {
@@ -38,12 +40,19 @@ class App extends React.Component {
       }
     });
   }
+  getQuery(event) {
+    const query = event.currentTarget.value;
+    this.setState({ query: query });
+    // meterle aqui una condicional que compare los dos primeros caracteres de query y de myPokemon.name -tendría que subirlo por lifting-
+  }
 
   render() {
     const { pokemones, query } = this.state;
+    console.log(pokemones);
 
     return (
       <div className="app">
+        <Filter getQuery={this.getQuery} query={query} />
         <PokeList pokemones={pokemones} query={query} />
       </div>
     );
@@ -52,7 +61,7 @@ class App extends React.Component {
 
 App.propTypes = {
   pokemones: PropTypes.arrayOf(PropTypes.object),
-  query: PropTypes.string.isRequired
+  query: PropTypes.string
 };
 
 export default App;

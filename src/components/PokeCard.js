@@ -7,19 +7,21 @@ const PokeCard = props => {
   return (
     <div className="card">
       <div className="card__img--container">
-        <p className="id">ID /{index + 1} </p>
+        <p className="card__id">ID /{index + 1} </p>
         <img src={pokemon.image} className="card__img" alt={pokemon.name}></img>
       </div>
-      <h2>{pokemon.name}</h2>
-      <ul className="card__types">
-        {pokemon.types.map((type, typeIndex) => {
-          return (
-            <li className="card__type" key={typeIndex}>
-              {type}
-            </li>
-          );
-        })}
-      </ul>
+      <div className="card__info--container">
+        <h2 className="card__info--name">{pokemon.name}</h2>
+        <ul className="card__info--types">
+          {pokemon.types.map((type, typeIndex) => {
+            return (
+              <li className="card__info--type" key={typeIndex}>
+                {type}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

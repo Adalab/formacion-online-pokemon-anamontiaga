@@ -1,0 +1,12 @@
+.pokemones {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  padding-left: 0;
+  width: 255px;
+  &__item {
+    margin: 0;
+    width: 120px;
+  }
+}

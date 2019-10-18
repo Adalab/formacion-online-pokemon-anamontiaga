@@ -1,0 +1,42 @@
+.card {
+  box-shadow: 0px 0px 18px -7px #000000;
+  &__img {
+    &--container {
+      background-color: rgb(226, 226, 226);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+  &__id {
+    background-color: rgb(177, 176, 176);
+    font-size: 9px;
+    width: 25px;
+    position: absolute;
+  }
+  &__info {
+    &--container {
+      background-color: #ffffff;
+      padding: 11px 0 11px 7px;
+    }
+    &--name {
+      font-size: 13px;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    &--types {
+      font-size: 8px;
+      font-weight: 100;
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+      text-transform: uppercase;
+    }
+    &--type {
+      border: 1px solid rgb(184, 184, 184);
+      border-radius: 2px;
+      margin-right: 3px;
+      padding: 1px;
+    }
+  }
+}
