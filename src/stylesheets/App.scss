@@ -1,12 +1,111 @@
 * {
   font-family: "Open Sans";
   margin: 0;
+  padding: 0;
 }
 
 .app {
-  background-color: #ffeb00;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
   text-align: center;
-  align-items: center;
+}
+
+.background__triangle {
+  &--right {
+    align-self: flex-start;
+    border-left: 35px solid #000000;
+    border-top: 0px solid transparent;
+    border-bottom: 35px solid transparent;
+    position: fixed;
+  }
+  &--left {
+    align-self: flex-end;
+    border-right: 35px solid #000000;
+    border-top: 0px solid transparent;
+    border-bottom: 35px solid transparent;
+    position: fixed;
+  }
+}
+
+.background__circle {
+  align-self: flex-end;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  &--right {
+    background-color: #c20808;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    transform: translate(-35px, 540px);
+  }
+  &--left {
+    background-color: #c20808;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    transform: translate(35px, 540px);
+  }
+}
+
+@media all and (min-width: 768px) {
+  .app {
+    padding-bottom: 70px;
+  }
+  .background__triangle {
+    &--right {
+      border-left: 65px solid #000000;
+      border-bottom: 65px solid transparent;
+    }
+    &--left {
+      border-right: 65px solid #000000;
+      border-bottom: 65px solid transparent;
+    }
+  }
+  .background__circle {
+    height: 120px;
+    &--right {
+      height: 120px;
+      width: 120px;
+      transform: translate(-60px, 510px);
+    }
+    &--left {
+      height: 120px;
+      width: 120px;
+      transform: translate(60px, 510px);
+    }
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .app {
+    padding-bottom: 90px;
+  }
+  .background__triangle {
+    &--right {
+      border-left: 100px solid #000000;
+      border-bottom: 100px solid transparent;
+    }
+    &--left {
+      border-right: 100px solid #000000;
+      border-bottom: 100px solid transparent;
+    }
+  }
+  .background__circle {
+    height: 170px;
+    &--right {
+      height: 170px;
+      width: 170px;
+      transform: translate(-85px, 485px);
+    }
+    &--left {
+      height: 170px;
+      width: 170px;
+      transform: translate(85px, 485px);
+    }
+  }
 }

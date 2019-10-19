@@ -10,3 +10,22 @@
     width: 120px;
   }
 }
+
+@media all and (min-width: 768px) {
+  .pokemones {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 480px;
+    &__item {
+      width: 150px;
+    }
+  }
+}
+@media all and (min-width: 1200px) {
+  .pokemones {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 725px;
+    &__item {
+      width: 170px;
+    }
+  }
+}
