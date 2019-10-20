@@ -12,8 +12,7 @@ const Filter = props => {
 };
 
 Filter.propTypes = {
-  getQuery: PropTypes.func.isRequired,
-  query: PropTypes.string.isRequired
+  getQuery: PropTypes.func.isRequired
 };
 
 export default Filter;

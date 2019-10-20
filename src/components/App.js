@@ -1,8 +1,8 @@
 import React from "react";
 import "../stylesheets/App.scss";
 import { fetchPokemones } from "../services/fetchPokemones";
-import PokeList from "./PokeList.js";
-import Filter from "./Filter.js";
+import Home from "./Home";
+import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
 class App extends React.Component {
@@ -58,8 +58,18 @@ class App extends React.Component {
           <div className="background__circle--right"></div>
           <div className="background__circle--left"></div>
         </div>
-        <Filter getQuery={this.getQuery} />
-        <PokeList pokemones={pokemones} query={query} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Home getQuery={this.getQuery} query={query} pokemones={pokemones} />;
+            }}
+          />
+        </Switch>
+
+        {/* <Filter getQuery={this.getQuery} />
+        <PokeList pokemones={pokemones} query={query} /> */}
       </div>
     );
   }
