@@ -35,7 +35,6 @@ class App extends React.Component {
               types: types
             };
             this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
-            // si pokemones está vacío, para qué repetirlo? ¿porque estamos metiendo un objeto dentro de un array?
           });
       }
     });
@@ -43,12 +42,10 @@ class App extends React.Component {
   getQuery(event) {
     const query = event.currentTarget.value;
     this.setState({ query: query });
-    // meterle aqui una condicional que compare los dos primeros caracteres de query y de myPokemon.name -tendría que subirlo por lifting-
   }
 
   render() {
     const { pokemones, query } = this.state;
-    console.log(pokemones);
 
     return (
       <div className="app">
