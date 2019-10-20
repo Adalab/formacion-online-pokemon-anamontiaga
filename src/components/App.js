@@ -58,7 +58,7 @@ class App extends React.Component {
           <div className="background__circle--right"></div>
           <div className="background__circle--left"></div>
         </div>
-        <Filter getQuery={this.getQuery} query={query} />
+        <Filter getQuery={this.getQuery} />
         <PokeList pokemones={pokemones} query={query} />
       </div>
     );

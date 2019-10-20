@@ -3,10 +3,10 @@ import "../stylesheets/Filter.scss";
 import PropTypes from "prop-types";
 
 const Filter = props => {
-  const { getQuery, query } = props;
+  const { getQuery } = props;
   return (
     <div className="app__filter">
-      <input type="text" className="app__filter--input" placeholder="Filtra pokemons por nombre..." onChange={getQuery} value={query} />
+      <input type="text" className="app__filter--input" placeholder="Filtra pokemons por nombre..." onChange={getQuery} />
     </div>
   );
 };
