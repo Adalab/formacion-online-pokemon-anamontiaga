@@ -64,9 +64,6 @@ class App extends React.Component {
             }}
           />
         </Switch>
-
-        {/* <Filter getQuery={this.getQuery} />
-        <PokeList pokemones={pokemones} query={query} /> */}
       </div>
     );
   }

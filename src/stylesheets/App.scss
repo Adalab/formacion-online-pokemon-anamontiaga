@@ -41,14 +41,14 @@
     border-radius: 50%;
     height: 70px;
     width: 70px;
-    transform: translate(-35px, 540px);
+    transform: translate(-35px, 595px);
   }
   &--left {
     background-color: #c20808;
     border-radius: 50%;
     height: 70px;
     width: 70px;
-    transform: translate(35px, 540px);
+    transform: translate(35px, 595px);
   }
 }
 
@@ -71,12 +71,12 @@
     &--right {
       height: 120px;
       width: 120px;
-      transform: translate(-60px, 510px);
+      transform: translate(-60px, 610px);
     }
     &--left {
       height: 120px;
       width: 120px;
-      transform: translate(60px, 510px);
+      transform: translate(60px, 610px);
     }
   }
 }
