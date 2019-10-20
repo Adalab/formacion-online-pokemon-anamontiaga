@@ -10,21 +10,21 @@ The webapp has been developed from [PokéAPI](#https://pokeapi.co)
 ## File Tree
 
 📦src
- ┣ 📂components
- ┃ ┣ 📜App.js
- ┃ ┣ 📜Filter.js
- ┃ ┣ 📜Home.js
- ┃ ┣ 📜PokeCard.js
- ┃ ┗ 📜PokeList.js
- ┣ 📂services
- ┃ ┗ 📜fetchPokemones.js
- ┣ 📂stylesheets
- ┃ ┣ 📜App.scss
- ┃ ┣ 📜Filter.scss
- ┃ ┣ 📜PokeCard.scss
- ┃ ┣ 📜PokeList.scss
- ┃ ┗ 📜index.scss
- ┗ 📜index.js
+┣ 📂components
+┃ ┣ 📜App.js
+┃ ┣ 📜Filter.js
+┃ ┣ 📜Home.js
+┃ ┣ 📜PokeCard.js
+┃ ┗ 📜PokeList.js
+┣ 📂services
+┃ ┗ 📜fetchPokemones.js
+┣ 📂stylesheets
+┃ ┣ 📜App.scss
+┃ ┣ 📜Filter.scss
+┃ ┣ 📜PokeCard.scss
+┃ ┣ 📜PokeList.scss
+┃ ┗ 📜index.scss
+┗ 📜index.js
 
 ## Starting 🚀 
 
