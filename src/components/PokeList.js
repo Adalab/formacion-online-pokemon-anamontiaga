@@ -8,10 +8,10 @@ const PokeList = props => {
   return (
     <ul className="pokemones">
       {pokemones
-        .filter(myPokemon => myPokemon.name.toUpperCase().includes(query.toUpperCase()))
         .filter(myPokemon => {
           return query === "" ? true : myPokemon.name.substr(0, 2).toUpperCase() === query.substr(0, 2).toUpperCase();
         })
+        .slice(0, 25)
         .map((pokemon, index) => {
           return (
             <li className="pokemones__item" id={index + 1} key={index + 1}>
