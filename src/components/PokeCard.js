@@ -3,11 +3,11 @@ import "../stylesheets/PokeCard.scss";
 import PropTypes from "prop-types";
 
 const PokeCard = props => {
-  const { pokemon, index } = props;
+  const { pokemon } = props;
   return (
     <div className="card">
       <div className="card__img--container">
-        <p className="card__id">ID /{index + 1} </p>
+        <p className="card__id">ID /{pokemon.id - 150} </p>
         <img src={pokemon.image} className="card__img" alt={pokemon.name}></img>
       </div>
       <div className="card__info--container">
@@ -29,7 +29,6 @@ const PokeCard = props => {
 PokeCard.propTypes = {
   pokemon: PropTypes.object.isRequired,
   type: PropTypes.string,
-  index: PropTypes.number.isRequired,
   typeIndex: PropTypes.number
 };
 

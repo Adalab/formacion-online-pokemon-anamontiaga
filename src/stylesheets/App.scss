@@ -13,42 +13,41 @@
 }
 
 .background__triangle {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  position: fixed;
   &--right {
-    align-self: flex-start;
     border-left: 35px solid #000000;
     border-top: 0px solid transparent;
     border-bottom: 35px solid transparent;
-    position: fixed;
   }
   &--left {
-    align-self: flex-end;
     border-right: 35px solid #000000;
     border-top: 0px solid transparent;
     border-bottom: 35px solid transparent;
-    position: fixed;
   }
 }
 
 .background__circle {
-  align-self: flex-end;
   display: flex;
   height: 70px;
   justify-content: space-between;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   &--right {
     background-color: #c20808;
     border-radius: 50%;
     height: 70px;
     width: 70px;
-    transform: translate(-35px, 595px);
+    transform: translate(-35px, 95vh);
   }
   &--left {
     background-color: #c20808;
     border-radius: 50%;
     height: 70px;
     width: 70px;
-    transform: translate(35px, 595px);
+    transform: translate(35px, 95vh);
   }
 }
 
@@ -71,12 +70,12 @@
     &--right {
       height: 120px;
       width: 120px;
-      transform: translate(-60px, 610px);
+      transform: translate(-60px, 93.5vh);
     }
     &--left {
       height: 120px;
       width: 120px;
-      transform: translate(60px, 610px);
+      transform: translate(60px, 93.5vh);
     }
   }
 }
@@ -100,12 +99,12 @@
     &--right {
       height: 170px;
       width: 170px;
-      transform: translate(-85px, 485px);
+      transform: translate(-85px, 90vh);
     }
     &--left {
       height: 170px;
       width: 170px;
-      transform: translate(85px, 485px);
+      transform: translate(85px, 90vh);
     }
   }
 }

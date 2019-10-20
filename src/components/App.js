@@ -32,7 +32,8 @@ class App extends React.Component {
             const infoPokemon = {
               name: pokemon.name,
               image: pokeInfo.sprites.front_default,
-              types: types
+              types: types,
+              id: pokeInfo.id
             };
             this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
           });
@@ -49,8 +50,10 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <div className="background__triangle--right"></div>
-        <div className="background__triangle--left"></div>
+        <div className="background__triangle">
+          <div className="background__triangle--right"></div>
+          <div className="background__triangle--left"></div>
+        </div>
         <div className="background__circle">
           <div className="background__circle--right"></div>
           <div className="background__circle--left"></div>
