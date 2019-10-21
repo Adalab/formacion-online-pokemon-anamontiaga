@@ -29,12 +29,20 @@ class App extends React.Component {
             for (let item of pokeInfo.types) {
               types.push(item.type.name);
             }
+            const infoAbilities = [];
+            for (let item of pokeInfo.abilities) {
+              infoAbilities.push(item.ability.name);
+            }
             const infoPokemon = {
               name: pokemon.name,
               image: pokeInfo.sprites.front_default,
               types: types,
-              id: pokeInfo.id
+              id: pokeInfo.id,
+              height: pokeInfo.height,
+              weight: pokeInfo.weight,
+              abilities: infoAbilities
             };
+
             this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
           });
       }
