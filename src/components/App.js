@@ -2,6 +2,7 @@ import React from "react";
 import "../stylesheets/App.scss";
 import { fetchPokemones } from "../services/fetchPokemones";
 import Home from "./Home";
+import PokeDetail from "./PokeDetail";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -10,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       pokemones: [],
+      images: [],
       query: ""
     };
     this.getQuery = this.getQuery.bind(this);
@@ -42,8 +44,18 @@ class App extends React.Component {
               weight: pokeInfo.weight,
               abilities: infoAbilities
             };
+            const images = {
+              defaultImage: pokeInfo.sprites.back_default,
+              backFemale: pokeInfo.sprites.back_female,
+              backShinny: pokeInfo.sprites.back_shiny,
+              backShinnyFemale: pokeInfo.sprites.back_shiny_female,
+              frontDefault: pokeInfo.sprites.front_default,
+              frontFemale: pokeInfo.sprites.front_female,
+              frontShinny: pokeInfo.sprites.front_shiny,
+              frontShinyFemale: pokeInfo.sprites.front_shiny_female
+            };
 
-            this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
+            this.setState({ pokemones: [...this.state.pokemones, infoPokemon], images: [...this.state.images, images] });
           });
       }
     });
@@ -72,6 +84,12 @@ class App extends React.Component {
             path="/"
             render={() => {
               return <Home getQuery={this.getQuery} query={query} pokemones={pokemones} />;
+            }}
+          />
+          <Route
+            path="/poke-detail/:pokeId"
+            render={routerProps => {
+              return <PokeDetail routerProps={routerProps} pokemones={pokemones} />;
             }}
           />
         </Switch>

@@ -2,6 +2,7 @@ import React from "react";
 import "../stylesheets/PokeList.scss";
 import PropTypes from "prop-types";
 import PokeCard from "./PokeCard.js";
+import { Link } from "react-router-dom";
 
 const PokeList = props => {
   const { pokemones, query } = props;
@@ -12,10 +13,12 @@ const PokeList = props => {
           return query === "" ? true : myPokemon.name.substr(0, 2).toUpperCase() === query.substr(0, 2).toUpperCase();
         })
         .slice(0, 25)
-        .map((pokemon, index) => {
+        .map(pokemon => {
           return (
-            <li className="pokemones__item" id={index + 1} key={index + 1}>
-              <PokeCard pokemon={pokemon} index={index} />
+            <li className="pokemones__item" id={pokemon.id} key={`key${pokemon.id}`}>
+              <Link to={`/poke-detail/${pokemon.id}`} className="pokemon__link">
+                <PokeCard pokemon={pokemon} />
+              </Link>
             </li>
           );
         })}

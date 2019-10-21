@@ -11,6 +11,10 @@
   }
 }
 
+.pokemon__link {
+  text-decoration: none;
+}
+
 @media all and (min-width: 768px) {
   .pokemones {
     grid-template-columns: 1fr 1fr 1fr;
