@@ -7,7 +7,7 @@ const PokeCard = props => {
   return (
     <div className="card">
       <div className="card__img--container">
-        <p className="card__id">ID /{pokemon.id - 150} </p>
+        <p className="card__id">ID /{pokemon.id} </p>
         <img src={pokemon.image} className="card__img" alt={pokemon.name}></img>
       </div>
       <div className="card__info--container">
