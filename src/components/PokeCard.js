@@ -2,6 +2,8 @@ import React from "react";
 import "../stylesheets/PokeCard.scss";
 import PropTypes from "prop-types";
 
+// Pintamos todas las propiedades que necesitamos. Nos traemos pokemon del map que hemos realizado en Pokelist.
+// Para las types, mapeamos.
 const PokeCard = props => {
   const { pokemon } = props;
   return (

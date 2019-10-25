@@ -2,6 +2,8 @@ import React from "react";
 import "../stylesheets/Filter.scss";
 import PropTypes from "prop-types";
 
+// Desde app y luego desde Home le pasamos la función que coge el valor del inputy lo sube al estado.
+
 const Filter = props => {
   const { getQuery } = props;
   return (
