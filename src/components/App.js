@@ -19,6 +19,9 @@ class App extends React.Component {
     this.getPokemones();
   }
 
+  // Recorrro el array y hago fetch en los url que tienen el resto de la información.
+  // A su vez, al llegar a los types, como puede haber varios, los guardo en un array.
+  // en el objeto infoPokemon guardo el resto de información y la formateo en propidades del objeto que luego subo al estado. Como es un objeto, abro el estado con un spread y lo meto dentro.
   getPokemones() {
     fetchPokemones().then(data => {
       for (let pokemon of data.results) {
@@ -48,11 +51,16 @@ class App extends React.Component {
       }
     });
   }
+
+  // Función que coge el valor que escribo en el input y lo sube al estado (string=string).
   getQuery(event) {
     const query = event.currentTarget.value;
     this.setState({ query: query });
   }
 
+  // Desestructuring con el estado.
+  // Pintamos el fondo de la app.
+  // Metemos la ruta a la Home.
   render() {
     const { pokemones, query } = this.state;
 

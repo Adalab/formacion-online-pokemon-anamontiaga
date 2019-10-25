@@ -4,4 +4,6 @@ const fetchPokemones = () => {
   return fetch(endpoint).then(response => response.json());
 };
 
+// definir asíncrono
+
 export { fetchPokemones };
