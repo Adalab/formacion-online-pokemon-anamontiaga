@@ -3,6 +3,7 @@ import "../stylesheets/App.scss";
 import { fetchPokemones } from "../services/fetchPokemones";
 import Home from "./Home";
 import PokeDetail from "./PokeDetail";
+import Background from "./Background";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -59,13 +60,7 @@ class App extends React.Component {
     });
   }
 
-  //   una vez dentro de pokenon url:
-  // (fetch(species.url)
-
-  //   evolves_from_species: null or name)
-
   getPokemonDetail() {
-    console.log("Hola");
     fetchPokemones().then(data => {
       for (let pokemon of data.results) {
         fetch(pokemon.url)
@@ -91,14 +86,8 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <div className="background__triangle">
-          <div className="background__triangle--right"></div>
-          <div className="background__triangle--left"></div>
-        </div>
-        <div className="background__circle">
-          <div className="background__circle--right"></div>
-          <div className="background__circle--left"></div>
-        </div>
+        <Background />
+
         <Switch>
           <Route
             exact
