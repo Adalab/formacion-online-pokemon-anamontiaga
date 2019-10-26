@@ -4,11 +4,12 @@ import PokeList from "./PokeList";
 import PropTypes from "prop-types";
 
 const Home = props => {
-  const { getQuery, query, pokemones } = props;
+  const { getQuery, query, pokemones, getPokemonDetail } = props;
+
   return (
     <Fragment>
       <Filter getQuery={getQuery} />
-      <PokeList pokemones={pokemones} query={query} />
+      <PokeList pokemones={pokemones} query={query} getPokemonDetail={getPokemonDetail} />
     </Fragment>
   );
 };
