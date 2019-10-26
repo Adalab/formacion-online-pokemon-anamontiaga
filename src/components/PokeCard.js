@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 // Para las types, mapeamos.
 const PokeCard = props => {
   const { pokemon } = props;
+  const nullEvolution = pokemon.evolution === "" ? "hide" : "";
   return (
     <div className="card">
       <div className="card__img--container">
@@ -23,6 +24,14 @@ const PokeCard = props => {
             );
           })}
         </ul>
+
+        <div className={`card__info--evolution ${nullEvolution}`}>
+          <div className="card__info--evolution-line"></div>
+          <div className="card__info--evolution-content">
+            <p className="card__info--evolution-text">Evoluciona de:</p>
+            <p className="card__info--evolution-pokemon">{pokemon.evolution}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

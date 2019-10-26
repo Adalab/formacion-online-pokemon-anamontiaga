@@ -28,27 +28,32 @@ class App extends React.Component {
         fetch(pokemon.url)
           .then(response => response.json())
           .then(pokeInfo => {
-            const types = [];
-            for (let item of pokeInfo.types) {
-              types.push(item.type.name);
-            }
-            const infoAbilities = [];
-            for (let item of pokeInfo.abilities) {
-              infoAbilities.push(item.ability.name);
-            }
-            const infoPokemon = {
-              name: pokemon.name,
-              image: pokeInfo.sprites.front_default,
-              types: types,
-              id: pokeInfo.id,
+            fetch(pokeInfo.species.url)
+              .then(response => response.json())
+              .then(species => {
+                const types = [];
+                for (let item of pokeInfo.types) {
+                  types.push(item.type.name);
+                }
+                const infoAbilities = [];
+                for (let item of pokeInfo.abilities) {
+                  infoAbilities.push(item.ability.name);
+                }
 
-              // Cambiar al otro fetch
-              height: pokeInfo.height,
-              weight: pokeInfo.weight,
-              abilities: infoAbilities
-            };
+                const infoPokemon = {
+                  name: pokemon.name,
+                  image: pokeInfo.sprites.front_default,
+                  types: types,
+                  id: pokeInfo.id,
+                  evolution: species.evolves_from_species ? species.evolves_from_species.name : "",
+                  // Cambiar al otro fetch
+                  height: pokeInfo.height,
+                  weight: pokeInfo.weight,
+                  abilities: infoAbilities
+                };
 
-            this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
+                this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
+              });
           });
       }
     });

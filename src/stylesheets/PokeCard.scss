@@ -15,7 +15,7 @@
   &__id {
     align-self: flex-start;
     background-color: rgb(177, 176, 176);
-    color: #000000;
+    color: #442802;
     font-size: 9px;
     width: 25px;
     position: absolute;
@@ -23,6 +23,7 @@
   &__info {
     &--container {
       background-color: #ffffff;
+      height: 80px;
       padding: 11px 0 11px 7px;
     }
     &--name {
@@ -47,7 +48,32 @@
       margin-right: 3px;
       padding: 1px;
     }
+    &--evolution {
+      display: flex;
+      flex-direction: row;
+      margin-top: 6px;
+      &-text {
+        color: #442802;
+        font-size: 8px;
+        text-align: left;
+      }
+      &-pokemon {
+        color: #442802;
+        font-size: 15px;
+        text-align: left;
+      }
+      &-line {
+        background-color: #442802;
+        height: 30px;
+        margin-right: 3px;
+        width: 2px;
+      }
+    }
   }
+}
+
+.hide {
+  display: none;
 }
 
 @media all and (min-width: 768px) {
@@ -58,7 +84,7 @@
       width: 120px;
     }
     &__id {
-      font-size: 11px;
+      font-size: 9px;
       width: 35px;
     }
     &__info {
