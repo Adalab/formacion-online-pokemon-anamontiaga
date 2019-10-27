@@ -1,3 +1,21 @@
+.poke--detail {
+  margin-top: 80px;
+}
+
 .poke--detail__back {
   text-decoration: none;
+}
+
+.poke-detail__evolution--container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.poke-detail__evolution--start {
+  margin-right: 30px;
+}
+
+.poke-detail__ability {
+  list-style: none;
 }

@@ -3,25 +3,28 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../stylesheets/PokeDetail.scss";
 
-// paintDetail () {
-
-// }
-// console.log(`Has hecho click en el detalle de ${pokemonDetail.id}`);
-// otra función para pintar y todo a una
-
 const PokeDetail = props => {
-  const { routerProps, pokemones } = props;
+  const { routerProps, pokeDetail } = props;
   const pokeId = parseInt(routerProps.match.params.pokeId);
-  const pokemon = pokemones.filter(item => item.id === pokeId);
+  const pokemon = pokeDetail.filter(item => item.id === pokeId);
 
   if (pokemon[0]) {
-    const { name, id, image, height, weight, abilities } = pokemon[0];
+    const { name, id, image, height, weight, abilities, firstEvolutionName } = pokemon[0];
     return (
       <React.Fragment>
         <div className="poke--detail">
-          <h2 className="poke-detail__name">{name}</h2>
           <p className="poke-detail__id">ID/{id}</p>
-          <img src={image} className="poke-detail__image" alt={name} />
+          <div className="poke-detail__evolution--container">
+            <div className="poke-detail__evolution--start">
+              <img src={image} className="poke-detail__image" alt={name} />
+              <p>{name}</p>
+            </div>
+            <div className="poke-detail__evolution--first">
+              <img src={image} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
+              <p>{firstEvolutionName}</p>
+            </div>
+            {/* <img src={} className="poke-detail__image-second-evolution" alt={} /> */}
+          </div>
           <p className="poke-detail__height">Height: {height} cm</p>
           <p className="poke-detail__weight">Weight: {weight} gr</p>
 

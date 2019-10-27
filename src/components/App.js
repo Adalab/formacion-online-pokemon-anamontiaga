@@ -46,13 +46,8 @@ class App extends React.Component {
                   image: pokeInfo.sprites.front_default,
                   types: types,
                   id: pokeInfo.id,
-                  evolution: species.evolves_from_species ? species.evolves_from_species.name : "",
-                  // Cambiar al otro fetch
-                  height: pokeInfo.height,
-                  weight: pokeInfo.weight,
-                  abilities: infoAbilities
+                  evolution: species.evolves_from_species ? species.evolves_from_species.name : ""
                 };
-
                 this.setState({ pokemones: [...this.state.pokemones, infoPokemon] });
               });
           });
@@ -66,11 +61,25 @@ class App extends React.Component {
         fetch(pokemon.url)
           .then(response => response.json())
           .then(pokeInfoDetail => {
-            const pokeDetail = {
-              id: pokeInfoDetail.id,
-              height: pokeInfoDetail.height
-            };
-            this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
+            fetch(pokeInfoDetail.species.url)
+              .then(response => response.json())
+              .then(species => {
+                const infoAbilities = [];
+                for (let item of pokeInfoDetail.abilities) {
+                  infoAbilities.push(item.ability.name);
+                }
+                const pokeDetail = {
+                  name: pokeInfoDetail.name,
+                  id: pokeInfoDetail.id,
+                  image: pokeInfoDetail.sprites.front_default,
+                  height: pokeInfoDetail.height,
+                  weight: pokeInfoDetail.weight,
+                  abilities: infoAbilities,
+                  firstEvolutionName: species.evolves_from_species ? species.evolves_from_species.name : ""
+                  // firstEvolutionImage:
+                };
+                this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
+              });
           });
       }
     });
@@ -82,24 +91,25 @@ class App extends React.Component {
   }
 
   render() {
-    const { pokemones, query } = this.state;
+    const { pokemones, query, pokeDetail } = this.state;
 
     return (
       <div className="app">
         <Background />
+        {/* añadir interpolación de clases para cambiar el color. Mirar proyecto reactivas */}
 
         <Switch>
           <Route
             exact
             path="/"
             render={() => {
-              return <Home getQuery={this.getQuery} query={query} pokemones={pokemones} />;
+              return <Home getQuery={this.getQuery} query={query} pokemones={pokemones} getPokemonDetail={this.getPokemonDetail} />;
             }}
           />
           <Route
             path="/poke-detail/:pokeId"
             render={routerProps => {
-              return <PokeDetail routerProps={routerProps} pokemones={pokemones} />;
+              return <PokeDetail routerProps={routerProps} pokemones={pokemones} pokeDetail={pokeDetail} />;
             }}
           />
           {/* //CUANDO HAGA LOS FETCH DE GETPOKEMONDETAIL, VER SI HACE FALTA AQUI ESTA FUNCIÓN O PONERLA EN EL LINK DE LA HOME */}
