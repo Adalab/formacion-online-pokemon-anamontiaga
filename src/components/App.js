@@ -3,7 +3,7 @@ import "../stylesheets/App.scss";
 import { fetchPokemones } from "../services/fetchPokemones";
 import Home from "./Home";
 import PokeDetail from "./PokeDetail";
-import Background from "./Background";
+// import Background from "./Background";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -95,8 +95,7 @@ class App extends React.Component {
 
     return (
       <div className="app">
-        <Background />
-        {/* añadir interpolación de clases para cambiar el color. Mirar proyecto reactivas */}
+        {/* <Background /> */}
 
         <Switch>
           <Route
@@ -112,7 +111,6 @@ class App extends React.Component {
               return <PokeDetail routerProps={routerProps} pokemones={pokemones} pokeDetail={pokeDetail} />;
             }}
           />
-          {/* //CUANDO HAGA LOS FETCH DE GETPOKEMONDETAIL, VER SI HACE FALTA AQUI ESTA FUNCIÓN O PONERLA EN EL LINK DE LA HOME */}
         </Switch>
       </div>
     );
