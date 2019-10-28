@@ -4,33 +4,34 @@ import { Link } from "react-router-dom";
 import "../stylesheets/PokeDetail.scss";
 
 const PokeDetail = props => {
-  const { routerProps, pokeDetail } = props;
+  const { routerProps, pokeDetail, pokemones } = props;
   const pokeId = parseInt(routerProps.match.params.pokeId);
+
   const pokemon = pokeDetail.filter(item => item.id === pokeId);
 
   if (pokemon[0]) {
     const { name, id, image, height, weight, abilities, firstEvolutionName, secondEvolutionName } = pokemon[0];
+    const itemFirst = Evolution => (pokemones.find(item => item.name === Evolution) ? pokemones.find(item => item.name === Evolution).image : null);
     return (
       <React.Fragment>
         <div className="poke--detail">
-          <p className="poke-detail__id">ID/{id}</p>
           <div className="poke-detail__evolution--container">
             <div className="poke-detail__evolution--start">
               <img src={image} className="poke-detail__image" alt={name} />
               <p>{name}</p>
             </div>
+
             <div className="poke-detail__evolution--first">
-              <img src={image} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
+              <img src={itemFirst(firstEvolutionName)} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
               <p>{firstEvolutionName}</p>
             </div>
             <div className="poke-detail__evolution--second">
-              <img src={image} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
+              <img src={itemFirst(secondEvolutionName)} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
               <p>{secondEvolutionName}</p>
             </div>
           </div>
           <p className="poke-detail__height">Height: {height} cm</p>
           <p className="poke-detail__weight">Weight: {weight} gr</p>
-
           <ul className="poke-detail__abilities">
             {" "}
             Abilities:
@@ -42,6 +43,7 @@ const PokeDetail = props => {
               );
             })}
           </ul>
+          <p className="poke-detail__id">ID/{id}</p>
         </div>
 
         <Link to="/" className="poke--detail__back">
