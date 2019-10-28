@@ -76,9 +76,6 @@ class App extends React.Component {
                       abilities: infoAbilities,
                       firstEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : "",
                       secondEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : ""
-
-                      // firstEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : "",
-                      // secondEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : ""
                     };
                     this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
                   });

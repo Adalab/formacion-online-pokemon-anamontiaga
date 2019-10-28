@@ -16,7 +16,7 @@ const PokeList = props => {
         .slice(0, 25)
         .map((pokemon, index) => {
           return (
-            <li className="pokemones__item" id={index + 1} key={index + 1}>
+            <li className="pokemones__item" id={pokemon.id} key={index + 1}>
               <Link to={`/poke-detail/${pokemon.id}`} className="pokemon__link" onClick={getPokemonDetail}>
                 <PokeCard pokemon={pokemon} index={index} />
               </Link>

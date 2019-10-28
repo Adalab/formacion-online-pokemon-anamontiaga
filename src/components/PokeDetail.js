@@ -15,40 +15,54 @@ const PokeDetail = props => {
     const nullEvolves = firstEvolutionName === "" ? "hide" : "";
     return (
       <React.Fragment>
-        <Link to="/" className="poke--detail__back">
+        <Link to="/" className="poke-detail__back">
           {"<"}{" "}
         </Link>
-        <div className="poke--detail">
-          <div className="poke-detail__intro">{name}</div>
-          <img src={image} className="poke-detail__image" alt={name} />
+        <div className="poke-detail">
+          <div className="poke-detail__name">{name}</div>
+          <div className="poke-detail__intro">
+            <img src={image} className="poke-detail__image" alt={name} />
+            <div className="poke-detail__id">{id}</div>
+          </div>
           <div className="poke-detail__profile--intro">Profile</div>
-          <p className="poke-detail__height">Height: {height} cm</p>
-          <p className="poke-detail__weight">Weight: {weight} gr</p>
-          <ul className="poke-detail__abilities">
-            {" "}
-            Abilities:
-            {abilities.map((ability, abilityIndex) => {
-              return (
-                <li className="poke-detail__ability" key={abilityIndex}>
-                  {ability}
-                </li>
-              );
-            })}
-          </ul>
-          <p className="poke-detail__id">ID/{id}</p>
+          <div className="poke-detail__profile">
+            <p className="poke-detail__height">
+              <b>Height:</b> {height} cm
+            </p>
+            <p className="poke-detail__weight">
+              <b>Weight:</b> {weight} gr
+            </p>
+            <ul className="poke-detail__abilities">
+              {" "}
+              <b>Abilities:</b>
+              {abilities.map((ability, abilityIndex) => {
+                return (
+                  <li className="poke-detail__ability" key={abilityIndex}>
+                    {ability},
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           <div className="poke-detail__evolution--intro">Evolutions</div>
           <div className="poke-detail__evolution--container">
             <div className={`poke-detail__evolution--first ${nullEvolves}`}>
               <img src={itemFirst(firstEvolutionName)} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
-              <p>{firstEvolutionName}</p>
+              <p className="poke-detail__evolution--first--text">
+                <b>{firstEvolutionName}</b>
+              </p>
             </div>
             <div className="poke-detail__evolution--second">
               <img src={itemFirst(secondEvolutionName)} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
-              <p>{secondEvolutionName}</p>
+              <p className="poke-detail__evolution--second--text">
+                <b>{secondEvolutionName}</b>
+              </p>
             </div>
             <div className="poke-detail__evolution--start">
               <img src={image} className="poke-detail__image" alt={name} />
-              <p>{name}</p>
+              <p className="poke-detail__evolution--text">
+                <b>{name}</b>
+              </p>
             </div>
           </div>
         </div>
