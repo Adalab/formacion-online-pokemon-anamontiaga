@@ -12,24 +12,16 @@ const PokeDetail = props => {
   if (pokemon[0]) {
     const { name, id, image, height, weight, abilities, firstEvolutionName, secondEvolutionName } = pokemon[0];
     const itemFirst = Evolution => (pokemones.find(item => item.name === Evolution) ? pokemones.find(item => item.name === Evolution).image : null);
+    const nullEvolves = firstEvolutionName === "" ? "hide" : "";
     return (
       <React.Fragment>
+        <Link to="/" className="poke--detail__back">
+          {"<"}{" "}
+        </Link>
         <div className="poke--detail">
-          <div className="poke-detail__evolution--container">
-            <div className="poke-detail__evolution--start">
-              <img src={image} className="poke-detail__image" alt={name} />
-              <p>{name}</p>
-            </div>
-
-            <div className="poke-detail__evolution--first">
-              <img src={itemFirst(firstEvolutionName)} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
-              <p>{firstEvolutionName}</p>
-            </div>
-            <div className="poke-detail__evolution--second">
-              <img src={itemFirst(secondEvolutionName)} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
-              <p>{secondEvolutionName}</p>
-            </div>
-          </div>
+          <div className="poke-detail__intro">{name}</div>
+          <img src={image} className="poke-detail__image" alt={name} />
+          <div className="poke-detail__profile--intro">Profile</div>
           <p className="poke-detail__height">Height: {height} cm</p>
           <p className="poke-detail__weight">Weight: {weight} gr</p>
           <ul className="poke-detail__abilities">
@@ -44,17 +36,28 @@ const PokeDetail = props => {
             })}
           </ul>
           <p className="poke-detail__id">ID/{id}</p>
+          <div className="poke-detail__evolution--intro">Evolutions</div>
+          <div className="poke-detail__evolution--container">
+            <div className={`poke-detail__evolution--first ${nullEvolves}`}>
+              <img src={itemFirst(firstEvolutionName)} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
+              <p>{firstEvolutionName}</p>
+            </div>
+            <div className="poke-detail__evolution--second">
+              <img src={itemFirst(secondEvolutionName)} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
+              <p>{secondEvolutionName}</p>
+            </div>
+            <div className="poke-detail__evolution--start">
+              <img src={image} className="poke-detail__image" alt={name} />
+              <p>{name}</p>
+            </div>
+          </div>
         </div>
-
-        <Link to="/" className="poke--detail__back">
-          {"<"} Volver{" "}
-        </Link>
       </React.Fragment>
     );
   } else {
     return (
       <React.Fragment>
-        <p>Chacho, ese no lo tienes</p>
+        <p>Paciencia que ya llego</p>
         <Link to="/" className="poke--detail__back__error">
           {"<"} Volver{" "}
         </Link>

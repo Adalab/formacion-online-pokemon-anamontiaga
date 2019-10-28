@@ -74,13 +74,11 @@ class App extends React.Component {
                       height: pokeInfoDetail.height,
                       weight: pokeInfoDetail.weight,
                       abilities: infoAbilities,
-                      firstEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : "",
-                      secondEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : ""
+                      firstEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : "",
+                      secondEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : ""
 
-                      // firstEvolutionImage:
-                      // hacer un fetch el la url
-
-                      // venussaur > yvysaur > bulbassaur
+                      // firstEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : "",
+                      // secondEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : ""
                     };
                     this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
                   });

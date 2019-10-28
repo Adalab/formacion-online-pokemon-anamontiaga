@@ -1,13 +1,43 @@
 .poke--detail {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .poke--detail__back {
+  background-color: rgb(216, 81, 90);
+  border-radius: 50%;
+  color: #ffffff;
+  height: 25px;
+  font-size: 20px;
+  margin-top: 30px;
+  padding: 3px;
+  text-align: center;
   text-decoration: none;
+  width: 25px;
+  &:hover {
+    background-color: #ffffff;
+    color: rgb(216, 81, 90);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.poke-detail__evolution--intro,
+.poke-detail__profile--intro,
+.poke-detail__intro {
+  background-color: rgb(216, 81, 90);
+  color: #ffffff;
+  font-size: 14px;
+  height: 20px;
+  text-align: left;
+  padding-left: 10px;
+  width: 400px;
 }
 
 .poke-detail__evolution--container {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   margin: 10px;
 }
