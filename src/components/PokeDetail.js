@@ -9,7 +9,7 @@ const PokeDetail = props => {
   const pokemon = pokeDetail.filter(item => item.id === pokeId);
 
   if (pokemon[0]) {
-    const { name, id, image, height, weight, abilities, firstEvolutionName } = pokemon[0];
+    const { name, id, image, height, weight, abilities, firstEvolutionName, secondEvolutionName } = pokemon[0];
     return (
       <React.Fragment>
         <div className="poke--detail">
@@ -23,7 +23,10 @@ const PokeDetail = props => {
               <img src={image} className="poke-detail__image-first-evolution" alt={firstEvolutionName} />
               <p>{firstEvolutionName}</p>
             </div>
-            {/* <img src={} className="poke-detail__image-second-evolution" alt={} /> */}
+            <div className="poke-detail__evolution--second">
+              <img src={image} className="poke-detail__image-second-evolution" alt={secondEvolutionName} />
+              <p>{secondEvolutionName}</p>
+            </div>
           </div>
           <p className="poke-detail__height">Height: {height} cm</p>
           <p className="poke-detail__weight">Weight: {weight} gr</p>

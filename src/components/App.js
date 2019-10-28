@@ -36,10 +36,6 @@ class App extends React.Component {
                 for (let item of pokeInfo.types) {
                   types.push(item.type.name);
                 }
-                const infoAbilities = [];
-                for (let item of pokeInfo.abilities) {
-                  infoAbilities.push(item.ability.name);
-                }
 
                 const infoPokemon = {
                   name: pokemon.name,
@@ -64,21 +60,30 @@ class App extends React.Component {
             fetch(pokeInfoDetail.species.url)
               .then(response => response.json())
               .then(species => {
-                const infoAbilities = [];
-                for (let item of pokeInfoDetail.abilities) {
-                  infoAbilities.push(item.ability.name);
-                }
-                const pokeDetail = {
-                  name: pokeInfoDetail.name,
-                  id: pokeInfoDetail.id,
-                  image: pokeInfoDetail.sprites.front_default,
-                  height: pokeInfoDetail.height,
-                  weight: pokeInfoDetail.weight,
-                  abilities: infoAbilities,
-                  firstEvolutionName: species.evolves_from_species ? species.evolves_from_species.name : ""
-                  // firstEvolutionImage:
-                };
-                this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
+                fetch(species.evolution_chain.url)
+                  .then(response => response.json())
+                  .then(evolutions => {
+                    const infoAbilities = [];
+                    for (let item of pokeInfoDetail.abilities) {
+                      infoAbilities.push(item.ability.name);
+                    }
+                    const pokeDetail = {
+                      name: pokeInfoDetail.name,
+                      id: pokeInfoDetail.id,
+                      image: pokeInfoDetail.sprites.front_default,
+                      height: pokeInfoDetail.height,
+                      weight: pokeInfoDetail.weight,
+                      abilities: infoAbilities,
+                      firstEvolutionName: evolutions.chain.evolves_to[0] ? evolutions.chain.evolves_to[0].species.name : "",
+                      secondEvolutionName: evolutions.chain.species ? evolutions.chain.species.name : ""
+
+                      // firstEvolutionImage:
+                      // hacer un fetch el la url
+
+                      // venussaur > yvysaur > bulbassaur
+                    };
+                    this.setState({ pokeDetail: [...this.state.pokeDetail, pokeDetail] });
+                  });
               });
           });
       }
