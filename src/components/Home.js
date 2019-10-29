@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import Logo from "../images/Logo.png";
+import "../stylesheets/Home.scss";
 import Filter from "./Filter";
 import PokeList from "./PokeList";
 import PropTypes from "prop-types";
@@ -8,6 +10,7 @@ const Home = props => {
 
   return (
     <Fragment>
+      <img src={Logo} alt="" className="home-logo"></img>
       <Filter getQuery={getQuery} />
       <PokeList pokemones={pokemones} query={query} getPokemonDetail={getPokemonDetail} />
     </Fragment>

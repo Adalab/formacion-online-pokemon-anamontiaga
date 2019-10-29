@@ -1,4 +1,5 @@
 import React from "react";
+import PokeType from "./PokeType";
 import "../stylesheets/PokeCard.scss";
 import PropTypes from "prop-types";
 
@@ -15,11 +16,10 @@ const PokeCard = props => {
         <h2 className="card__info--name">{pokemon.name}</h2>
         <ul className="card__info--types">
           {pokemon.types.map((type, typeIndex) => {
-            return (
-              <li className="card__info--type" key={typeIndex}>
-                {type}
-              </li>
-            );
+            return <PokeType type={type} key={typeIndex} />;
+            // <li className="card__info--type" key={typeIndex}>
+            //   {type}
+            // </li>
           })}
         </ul>
 
