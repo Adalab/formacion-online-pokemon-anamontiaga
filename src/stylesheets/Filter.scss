@@ -2,16 +2,15 @@
   padding-bottom: 20px;
   padding-top: 10px;
   &--input {
-    border: none;
-    box-shadow: 0px 0px 18px -4px #000000;
+    background-color: rgba(252, 242, 99, 0.932);
+    background-image: url("../images/search.png");
+    background-position: 205px 4px;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    border: solid 1px #081765;
+    border-radius: 20px;
     height: 22px;
-    opacity: 0.8;
-    padding-left: 10px;
-    width: 170px;
-    &::placeholder {
-      font-size: 10px;
-      text-align: center;
-    }
+    width: 230px;
   }
 }
 
@@ -20,12 +19,10 @@
     padding-bottom: 20px;
     padding-top: 20px;
     &--input {
+      background-position: 415px 4px;
+      background-size: 22px;
       height: 30px;
-      padding-left: 15px;
-      width: 320px;
-      &::placeholder {
-        font-size: 12px;
-      }
+      width: 450px;
     }
   }
 }
@@ -34,11 +31,10 @@
   .app__filter {
     padding-top: 30px;
     &--input {
+      background-position: 660px 5px;
+      background-size: 24px;
       height: 34px;
-      width: 470px;
-      &::placeholder {
-        font-size: 16px;
-      }
+      width: 700px;
     }
   }
 }

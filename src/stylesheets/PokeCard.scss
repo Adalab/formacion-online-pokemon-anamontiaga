@@ -1,6 +1,6 @@
 .card {
   box-shadow: 0px 0px 18px -7px #000000;
-
+  cursor: url("../images/pokeball.cur"), pointer;
   &:hover {
     box-shadow: 0px 0px 3px 3px #000000;
   }
@@ -88,6 +88,7 @@
     }
     &__info {
       &--container {
+        height: 80px;
         padding: 12px 0 12px 9px;
       }
       &--name {

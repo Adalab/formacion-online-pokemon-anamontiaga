@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.dc4d9597.chunk.css",
-    "main.js": "./static/js/main.98548e40.chunk.js",
-    "main.js.map": "./static/js/main.98548e40.chunk.js.map",
+    "main.css": "./static/css/main.2160c7a4.chunk.css",
+    "main.js": "./static/js/main.b40f2acc.chunk.js",
+    "main.js.map": "./static/js/main.b40f2acc.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.58042a4e.js",
     "runtime-main.js.map": "./static/js/runtime-main.58042a4e.js.map",
-    "static/js/2.29f81729.chunk.js": "./static/js/2.29f81729.chunk.js",
-    "static/js/2.29f81729.chunk.js.map": "./static/js/2.29f81729.chunk.js.map",
+    "static/js/2.be5e62cd.chunk.js": "./static/js/2.be5e62cd.chunk.js",
+    "static/js/2.be5e62cd.chunk.js.map": "./static/js/2.be5e62cd.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.5452372389f1329c3ff313f16213032d.js": "./precache-manifest.5452372389f1329c3ff313f16213032d.js",
+    "precache-manifest.8da5683c4247259c7924767fc35de3e7.js": "./precache-manifest.8da5683c4247259c7924767fc35de3e7.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.dc4d9597.chunk.css.map": "./static/css/main.dc4d9597.chunk.css.map"
+    "static/css/main.2160c7a4.chunk.css.map": "./static/css/main.2160c7a4.chunk.css.map",
+    "static/media/Logo.png": "./static/media/Logo.4b49364a.png",
+    "static/media/logoPoke.png": "./static/media/logoPoke.5a092a05.png",
+    "static/media/PokeCard.scss": "./static/media/pokeball.9c8f6414.cur"
   },
   "entrypoints": [
     "static/js/runtime-main.58042a4e.js",
-    "static/js/2.29f81729.chunk.js",
-    "static/css/main.dc4d9597.chunk.css",
-    "static/js/main.98548e40.chunk.js"
+    "static/js/2.be5e62cd.chunk.js",
+    "static/css/main.2160c7a4.chunk.css",
+    "static/js/main.b40f2acc.chunk.js"
   ]
 }

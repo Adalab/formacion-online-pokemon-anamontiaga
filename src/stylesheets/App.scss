@@ -16,18 +16,5 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-bottom: 50px;
   text-align: center;
-}
-
-@media all and (min-width: 768px) {
-  .app {
-    padding-bottom: 70px;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  .app {
-    padding-bottom: 90px;
-  }
 }
