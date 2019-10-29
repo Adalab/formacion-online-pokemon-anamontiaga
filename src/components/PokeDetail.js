@@ -73,10 +73,12 @@ const PokeDetail = props => {
   } else {
     return (
       <React.Fragment>
-        <p>Paciencia que ya llego</p>
-        <Link to="/" className="poke--detail__back__error">
-          {"<"} Volver{" "}
-        </Link>
+        <div className="poke-detail__patience">
+          <p className="poke-detail__patience--text">Paciencia que ya llego...</p>
+          <Link to="/" className="poke-detail__patience--back">
+            {"<"}
+          </Link>
+        </div>
       </React.Fragment>
     );
   }

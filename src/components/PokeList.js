@@ -11,7 +11,6 @@ const PokeList = props => {
       {pokemones
         .filter(myPokemon => {
           return query === "" ? true : myPokemon.name.substr(0, 2).toUpperCase() === query.substr(0, 2).toUpperCase();
-          // cuando sea igual me devuelva todo FALTA CONDICIÓN ELSE
         })
         .slice(0, 25)
         .map((pokemon, index) => {
