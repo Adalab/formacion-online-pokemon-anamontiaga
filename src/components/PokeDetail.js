@@ -27,22 +27,24 @@ const PokeDetail = props => {
           <div className="poke-detail__profile--intro">Profile</div>
           <div className="poke-detail__profile">
             <p className="poke-detail__height">
-              <b>Height:</b> {height} cm
+              <b className="poke-detail__height--b">Height: </b> {height} cm
             </p>
             <p className="poke-detail__weight">
-              <b>Weight:</b> {weight} gr
+              <b className="poke-detail__weight--b">Weight:</b> {weight} gr
             </p>
-            <ul className="poke-detail__abilities">
-              {" "}
-              <b>Abilities:</b>
-              {abilities.map((ability, abilityIndex) => {
-                return (
-                  <li className="poke-detail__ability" key={abilityIndex}>
-                    {ability},
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="poke-detail__abilities">
+              <b className="poke-detail__abilities--b">Abilities:</b>
+              <ul className="poke-detail__abilities--list">
+                {" "}
+                {abilities.map((ability, abilityIndex) => {
+                  return (
+                    <li className="poke-detail__ability" key={abilityIndex}>
+                      {ability}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
           <div className="poke-detail__evolution--intro">Evolutions</div>
           <div className="poke-detail__evolution--container">
