@@ -3,11 +3,10 @@
   margin-top: 30px;
   padding: 15px;
   width: 280px;
-  &__back,
-  &__patience--back {
+  &__back {
     background-color: rgba(252, 242, 99, 0.932);
     border-radius: 50%;
-    color: #ffffff;
+    color: #081765;
     height: 25px;
     font-size: 20px;
     margin-top: 30px;
@@ -21,11 +20,28 @@
     }
   }
   &__patience {
-    margin-top: 70px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
     &--text {
-      color: #ffffff;
-      font-size: 20px;
+      color: #081765;
+      font-size: 22px;
+      font-weight: bold;
       margin-bottom: 40px;
+    }
+    &--back {
+      background-color: #ffffff;
+      border-radius: 15px;
+      color: rgba(252, 242, 99, 0.932);
+      font-size: 20px;
+      font-weight: bold;
+      height: 35px;
+      padding-top: 10px;
+      width: 150px;
+      &-link {
+        text-decoration: none;
+      }
     }
   }
   &__image,
@@ -122,6 +138,9 @@
 }
 
 @media all and (min-width: 768px) {
+  .poke-detail__patience--text {
+    font-size: 30px;
+  }
 }
 
 @media all and (min-width: 1200px) {
